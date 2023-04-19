@@ -21,6 +21,7 @@ target/
 *.txt
 bootstrap.yml
 application.properties
+application.yml
 
 ### NetBeans ###
 /nbproject/private/
