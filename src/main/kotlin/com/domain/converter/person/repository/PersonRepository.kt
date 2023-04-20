@@ -9,5 +9,5 @@ import java.util.*
  */
 interface PersonRepository: JpaRepository<Person, Long> {
 
-    fun findByUserName(userName: String): Optional<Person>
+    fun findPersonByUserName(userName: String): Optional<Person>
 }
