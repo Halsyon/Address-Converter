@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS research.shortcut.person;
-DROP TABLE IF EXISTS research.shortcut.url;
+DROP TABLE IF EXISTS research.shortcut.person CASCADE;
+DROP TABLE IF EXISTS research.shortcut.url CASCADE;
 
 CREATE TABLE shortcut.person
 (
