@@ -29,18 +29,18 @@ data class Person(
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "person_id", nullable = false)
-    val id: Long = 0,
+    var id: Long = 0,
 
     @NotBlank(message = "username must be not empty")
     @Column(name = "username")
-    val userName: String? = null,
+    var userName: String? = null,
 
     @NotBlank(message = "password must be not empty")
     @Column(name = "password")
-    val password: String? = null,
+    var password: String? = null,
 
     @Column(name = "status")
-    val status: Boolean = false,
+    var status: Boolean = false,
 
     @Column(nullable = true)
     @OneToMany(orphanRemoval = true, cascade = [CascadeType.ALL], mappedBy = "person")

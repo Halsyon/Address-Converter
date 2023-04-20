@@ -87,10 +87,11 @@ class UrlService(
      * найти ссылку по ключу
      */
     fun findById(urlId: String?): UrlView =
-        urlId.let {
+        urlId
+            ?.let {
             val url = getEntityById(it)
             modelMapper.map(url, UrlView::class.java)
-        }
+        } ?: throw RuntimeException("Please enter a valid id url link !")
 
     /**
      * шифрование ссылки

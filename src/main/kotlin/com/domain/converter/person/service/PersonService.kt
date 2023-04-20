@@ -4,6 +4,7 @@ import com.domain.converter.person.model.model.Person
 import com.domain.converter.url.model.entity.Url
 import com.domain.converter.person.model.view.PersonView
 import com.domain.converter.person.repository.PersonRepository
+import com.domain.converter.security.model.RegistrationStatus
 import org.modelmapper.ModelMapper
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -38,7 +39,7 @@ class PersonService(
     fun findByName(userName: String?): Person =
         userName
             ?.let {
-                personRepository.findByUserName(it)
+                personRepository.findPersonByUserName(it)
                     .orElseThrow { RuntimeException("Не существует с таким user name!") }
             } ?: throw RuntimeException("Person user name must not be null!")
 
@@ -61,13 +62,16 @@ class PersonService(
         return personRepository.save(person)
     }
 
-//    fun addPersonToRegistrationStatus(person: Person): RegstrnStatus? {
-//        val regstrnStatus = RegstrnStatus()
-//        regstrnStatus.setRegistration(person.isStatus())
-//        regstrnStatus.setLogin(person.getUsername())
-//        regstrnStatus.setPassword(person.getPassword())
-//        return regstrnStatus
-//    }
+    fun addPersonToRegistrationStatus(person: Person?): RegistrationStatus? {
+        person?.let {
+            val registrantStatus = RegistrationStatus()
+            registrantStatus.registration = person.status
+            registrantStatus.login = person.userName
+            registrantStatus.password = person.password
+            return registrantStatus
+        } ?:throw RuntimeException("Person must be not null")
+
+    }
 
     private fun getEntityById(entityId: Long?): Person =
         entityId
