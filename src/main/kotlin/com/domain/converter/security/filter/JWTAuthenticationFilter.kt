@@ -35,7 +35,7 @@ import javax.servlet.http.HttpServletResponse
 /**
  * @author Halsyon
  */
-class JWTAuthenticationFilter: UsernamePasswordAuthenticationFilter() {
+class JWTAuthenticationFilter(authenticationManager: AuthenticationManager) : UsernamePasswordAuthenticationFilter() {
     val SECRET = "SecretKeyToGenJWTs"
     val EXPIRATION_TIME: Long = 864000000 /* 10 days */
 
