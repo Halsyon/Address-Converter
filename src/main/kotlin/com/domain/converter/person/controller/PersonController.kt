@@ -1,15 +1,11 @@
-package com.domain.converter.controller
+package com.domain.converter.person.controller
 
-import com.domain.converter.model.model.Person
-import com.domain.converter.model.view.PersonView
-import com.domain.converter.service.PersonService
+import com.domain.converter.person.model.model.Person
+import com.domain.converter.person.model.view.PersonView
+import com.domain.converter.person.service.PersonService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
-import org.springframework.http.HttpStatus
-import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.util.stream.Collectors
-import java.util.stream.StreamSupport
 import javax.validation.Valid
 
 /**

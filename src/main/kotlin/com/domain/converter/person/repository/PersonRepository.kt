@@ -1,9 +1,12 @@
-package com.domain.converter.repository
+package com.domain.converter.person.repository
 
-import com.domain.converter.model.model.Person
+import com.domain.converter.person.model.model.Person
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
-
+/**
+ * @description
+ * @author
+ */
 interface PersonRepository: JpaRepository<Person, Long> {
 
     fun findByUserName(userName: String): Optional<Person>

@@ -1,9 +1,9 @@
-package com.domain.converter.service
+package com.domain.converter.person.service
 
-import com.domain.converter.model.model.Person
-import com.domain.converter.model.model.Url
-import com.domain.converter.model.view.PersonView
-import com.domain.converter.repository.PersonRepository
+import com.domain.converter.person.model.model.Person
+import com.domain.converter.url.model.entity.Url
+import com.domain.converter.person.model.view.PersonView
+import com.domain.converter.person.repository.PersonRepository
 import org.modelmapper.ModelMapper
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
