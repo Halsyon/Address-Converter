@@ -19,9 +19,9 @@ target/
 *.iml
 *.ipr
 *.txt
-bootstrap.yml
-application.properties
-application.yml
+/src/main/resources/bootstrap.yml
+/src/main/resources/application.properties
+/src/main/resources/application.yml
 
 ### NetBeans ###
 /nbproject/private/
