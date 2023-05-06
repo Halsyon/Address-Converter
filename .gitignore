@@ -23,6 +23,8 @@ pom.xml
 /src/main/resources/bootstrap.yml
 /src/main/resources/application.properties
 /src/main/resources/application.yml
+info.txt
+ToDo.txt
 
 ### NetBeans ###
 /nbproject/private/
